@@ -4,12 +4,12 @@ import configparser
 conf=configparser.ConfigParser()
 
 conf.read("./config.ini")
-# 连接转换
 
-type = conf.get('common','type')
+courls= conf.options('clash')
+vourls = conf.options('mixed')
 
-ourls= conf.options(type)
-for ourl in ourls:
+for ourl in courls:
+                type = 'clash'
                 url = conf.get(type, ourl)
                 api = conf.get('common','api')
                 endurl = r'target='+type+r'&url='+url
@@ -18,16 +18,26 @@ for ourl in ourls:
                 tarurl = api+endurl
                 r = requests.get(tarurl,allow_redirects=True)
                 
-                if(type == 'clash'):
-                        ext = ".yaml"
-                elif(type == 'mixed'):
-                        ext = ".txt"
-                filepath = "./sub/"+ourl+ext 
+                filepath = "./sub/clash/"+ourl+'.yaml' 
                 with open(filepath, "wb") as code:
                         code.write(r.content)
 
                 print(tarurl) 
 
 
+for ourl in vourls:
+                type = 'mixed'
+                url = conf.get(type, ourl)
+                api = conf.get('common','api')
+                endurl = r'target='+type+r'&url='+url
 
+                # 目标链接
+                tarurl = api+endurl
+                r = requests.get(tarurl,allow_redirects=True)
+                
+                filepath = "./sub/v2/"+ourl+'.txt' 
+                with open(filepath, "wb") as code:
+                        code.write(r.content)
+
+                print(tarurl) 
 
