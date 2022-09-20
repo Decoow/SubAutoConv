@@ -23,4 +23,4 @@
 
 
 ## V2ray
-`https://cdn.jsdelivr.net/gh/vveg26/SubAutoConv@main/sub/clash/url1.txt`
+`https://cdn.jsdelivr.net/gh/vveg26/SubAutoConv@main/sub/v2/url1.txt`
