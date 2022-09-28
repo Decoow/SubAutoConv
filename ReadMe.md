@@ -7,7 +7,7 @@
 | Name   | Value | 说明                                                                |
 | ------ | ----- | ------------------------------------------------------------------- |
 | clash  | url1  | 如果需要v2ray链接转clash，则将v2ray链接填入config.ini此处中         |
-| mixed  | url1  | 如果需要clash链接转v2ray，则将v2ray链接填入config.ini中vx测试号中获 |
+| mixed  | url1  | 如果需要clash链接转v2ray，则将v2ray链接填入config.ini中此处中 |
 | common | api   | 后端地址                                                            |
 |        |       |                                                                     |
 
